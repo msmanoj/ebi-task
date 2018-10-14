@@ -44,8 +44,14 @@ export const geneApiRequest = async ({ geneSymbol }) => {
     geneSymbol
   );
 
-  let request = await getRequestDebounced(symbolTranscriptsEndpointURL, 500);
-  const geneInfo = request.data;
+  let geneInfo;
 
+  try {
+    let request = await getRequestDebounced(symbolTranscriptsEndpointURL, 500);
+    geneInfo = request.data;
+  } catch (error) {
+    // If there was any erro retrieving the gene info, return an empty array
+    return [];
+  }
   return getTranscripts(geneInfo.id, "protein");
 };
