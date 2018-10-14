@@ -8,7 +8,7 @@ const styles = theme => ({
   heroContent: {
     maxWidth: 600,
     margin: "0 auto",
-    padding: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 6}px`
+    padding: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 5}px`
   }
 });
 
@@ -21,15 +21,6 @@ const HeroContent = ({ classes }) => (
       gutterBottom
     >
       Transcripts
-    </Typography>
-    <Typography
-      variant="title"
-      align="center"
-      color="textSecondary"
-      component="p"
-    >
-      Get all transcripts from a gene with the given amino acid at the specified
-      position.
     </Typography>
   </Grid>
 );

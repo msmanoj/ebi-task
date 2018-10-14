@@ -6,15 +6,33 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+
+const CustomTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: "#555",
+    color: theme.palette.common.white
+  },
+  body: {
+    fontSize: 16
+  }
+}))(TableCell);
+
+const styles = theme => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white
+  }
+});
 
 const ResultList = ({ transcripts }) => (
   <React.Fragment>
     <Table style={{ display: transcripts.length ? "" : "none" }}>
       <TableHead>
         <TableRow>
-          <TableCell>ID</TableCell>
-          <TableCell>Molecule</TableCell>
-          <TableCell>Version</TableCell>
+          <CustomTableCell>ID</CustomTableCell>
+          <CustomTableCell>Molecule</CustomTableCell>
+          <CustomTableCell>Version</CustomTableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -50,7 +68,8 @@ const ResultList = ({ transcripts }) => (
 );
 
 ResultList.propTypes = {
-  transcripts: PropTypes.array
+  transcripts: PropTypes.array,
+  classes: PropTypes.object
 };
 
-export default ResultList;
+export default withStyles(styles)(ResultList);
