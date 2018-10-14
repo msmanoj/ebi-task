@@ -18,19 +18,20 @@ const CustomTableCell = withStyles(theme => ({
   }
 }))(TableCell);
 
-const styles = theme => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white
+const styles = () => ({
+  tableRow: {
+    "&:hover": {
+      backgroundColor: "#eee"
+    }
   }
 });
 
-const ResultList = ({ transcripts }) => (
+const ResultList = ({ transcripts, classes }) => (
   <React.Fragment>
     <Table style={{ display: transcripts.length ? "" : "none" }}>
       <TableHead>
         <TableRow>
-          <CustomTableCell>ID</CustomTableCell>
+          <CustomTableCell>Stable ID</CustomTableCell>
           <CustomTableCell>Molecule</CustomTableCell>
           <CustomTableCell>Version</CustomTableCell>
         </TableRow>
@@ -38,7 +39,7 @@ const ResultList = ({ transcripts }) => (
       <TableBody>
         {transcripts.map(transcript => {
           return (
-            <TableRow key={transcript.id}>
+            <TableRow key={transcript.id} className={classes.tableRow}>
               <TableCell component="th" scope="row">
                 <a
                   href={"http://www.ensembl.org/id/" + transcript.id}

@@ -23,7 +23,7 @@ const Header = ({ classes }) => {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography variant="title" color="inherit" className={classes.grow}>
-            Ensembl Genome Browser
+            Ensembl Transcripts
           </Typography>
         </Toolbar>
       </AppBar>
