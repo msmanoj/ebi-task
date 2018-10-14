@@ -4,7 +4,7 @@
 
 These instructions will get you a copy of the project up and running on your local machine.
 
-You can view the live version of this application [here](https://msmanoj.github.io/).
+You can view the live version of this application [here](https://msmanoj.github.io/ebi-task/).
 
 ### Prerequisites
 
