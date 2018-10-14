@@ -109,7 +109,7 @@ This is a basic appliaiton that makes used of the Ensembl REST APIs to get a a l
 
 - It is a good practice to define all the prop types in all the components as it will reduce the number of errors in the development phase
 
-# Testing
+## Testing
 
 ### Unit Tests and Coverage
 
