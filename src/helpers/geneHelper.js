@@ -3,8 +3,8 @@ export const isGeneFormValid = ({
   sequencePosition,
   aminoAcid
 }) => {
-  // MAke sure the required data is not empty
-  if (geneSymbol === "" || sequencePosition === "" || aminoAcid === "") {
+  // Return false if any of the form fields are empty
+  if (!geneSymbol || !sequencePosition || !aminoAcid) {
     return false;
   }
 
