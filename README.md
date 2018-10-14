@@ -53,9 +53,9 @@ This is a basic appliaiton that makes used of the Ensembl REST APIs to get a a l
 **General functionality:**
 
 1. Transcripts by Gene Symbol
-   A page with a form that takes in the following information: - A gene symbol e.g. BRAF - A position in a protein sequence e.g. 600 - An amino acid letter e.g. V
+   A page with a form that takes in the following information: - A gene symbol e.g. BRAF - A position in a protein sequence e.g. 600 - An amino acid letter e.g. V.
 
-The values entered above is processed and all transcripts from that gene with the given amino acid at the specified position is obtained from the Ensemble REST API. For each a link to the Ensembl website is displayed in a table.
+   The values entered above is processed and all transcripts from that gene with the given amino acid at the specified position is obtained from the Ensemble REST API. For each a link to the Ensembl website is displayed in a table.
 
 2. Transcripts by HGVS Nomenclature
    A page with a form that takes in the following HGVS nomenclature used to represent variation within a protein sequence. The value entered is first validated and then processed. Once it is processed, the link to transcritps matching the given HGVS nomenclature value is displayed to the user.
@@ -70,52 +70,52 @@ The values entered above is processed and all transcripts from that gene with th
 - [MATERIAL-UI](https://material-ui.com/) - React components that implement Google's Material Design.
 - [Awesome Debounce Promise](https://github.com/slorber/awesome-debounce-promise/) - Debounce your async calls with React in mind.
 
-### Architectural Decisions
+## Architectural Decisions
 
-## React Directory structure - Directory per view
+### React Directory structure - Directory per view
 
 - Code isolation
 - Clear view of the structure of the application
 - Better choice for a small application
 
-## Material UI
+### Material UI
 
 - Faster development process by avoiding DRY
 - Better choice when we do not have a spcific design standard
 - Clear documentation and less complex
 
-## Axios - To make external API calls
+### Axios - To make external API calls
 
 - Easy to abort a previously made request. Works pretty well when used along with 'Awesome Debounce Promise'
 - Performs automatic JSON data transformation
 
-## Single Responsibility Component
+### Single Responsibility Component
 
 - Improves expandability
 - Code isolation and reduced dependency
 - Easier to understand a purpose of a component
 
-## Encapsulation - Lose Coupling
+### Encapsulation - Lose Coupling
 
 - Components should hide the internal structure as much as possible and have less knowledge about other components.
 - This makes the components less coupled and easier to test
 
-## Pure Functions
+### Pure Functions
 
 - Methods should be pure or almost pure whereever possible
 - This will make the result of the methods to be more stable and predictable
 
-## Defining PropTypes
+### Defining PropTypes
 
 - It is a good practice to define all the prop types in all the components as it will reduce the number of errors in the development phase
 
-### Testing
+# Testing
 
-## Unit Tests and Coverage
+### Unit Tests and Coverage
 
 - It is better to automate the testing procees during the development stage as manual testing will get more complex as the scope of the application grows.
 - Almost all the components and methods needs to be included in the tests regardless of thir size and complexity.
 
-## Production Testing
+### Production Testing
 
 - Regression testing will be required after deploying on to the production environment.
