@@ -116,6 +116,12 @@ This is a basic appliaiton that makes used of the Ensembl REST APIs to get a a l
 - It is better to automate the testing procees during the development stage as manual testing will get more complex as the scope of the application grows.
 - Almost all the components and methods needs to be included in the tests regardless of thir size and complexity.
 
+### Run
+
+To run the tests:
+
+    npm test
+
 ### Production Testing
 
 - Regression testing will be required after deploying on to the production environment.
