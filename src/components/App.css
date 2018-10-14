@@ -1,0 +1,14 @@
+body{
+    background-color: #eee !important;
+  }
+  
+  /* Card cursor style */
+  .card.city_card{
+    cursor: pointer;
+  }
+  
+  /* Text padding left - 10px */
+  .text-p-l-10{
+    padding-left: 10px;
+  }
+  
