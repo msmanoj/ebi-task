@@ -1,13 +1,13 @@
 {
   "main.css": "/ebi-task/static/css/main.92e4bd1f.chunk.css",
-  "main.js": "/ebi-task/static/js/main.7abd0291.chunk.js",
-  "main.js.map": "/ebi-task/static/js/main.7abd0291.chunk.js.map",
-  "static/js/1.b50de931.chunk.js": "/ebi-task/static/js/1.b50de931.chunk.js",
-  "static/js/1.b50de931.chunk.js.map": "/ebi-task/static/js/1.b50de931.chunk.js.map",
+  "main.js": "/ebi-task/static/js/main.adb70a0d.chunk.js",
+  "main.js.map": "/ebi-task/static/js/main.adb70a0d.chunk.js.map",
+  "static/js/1.1717a116.chunk.js": "/ebi-task/static/js/1.1717a116.chunk.js",
+  "static/js/1.1717a116.chunk.js.map": "/ebi-task/static/js/1.1717a116.chunk.js.map",
   "runtime~main.js": "/ebi-task/static/js/runtime~main.4d4792f1.js",
   "runtime~main.js.map": "/ebi-task/static/js/runtime~main.4d4792f1.js.map",
   "static/css/main.92e4bd1f.chunk.css.map": "/ebi-task/static/css/main.92e4bd1f.chunk.css.map",
   "index.html": "/ebi-task/index.html",
-  "precache-manifest.27239b7ab454ee120e7ce20278632672.js": "/ebi-task/precache-manifest.27239b7ab454ee120e7ce20278632672.js",
+  "precache-manifest.46afe720756ac51fdcce57fb5d736b41.js": "/ebi-task/precache-manifest.46afe720756ac51fdcce57fb5d736b41.js",
   "service-worker.js": "/ebi-task/service-worker.js"
 }
