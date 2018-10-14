@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/ebi-task/static/css/main.1d86d077.chunk.css"
   },
   {
-    "revision": "b237c2af3a2a60ad3df27ed36c85590a",
+    "revision": "03ef1b7d16af9f4c2a2bbe01e332a927",
     "url": "/ebi-task/index.html"
   }
 ];
