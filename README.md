@@ -4,8 +4,6 @@
 
 These instructions will get you a copy of the project up and running on your local machine.
 
-You can view the live version of this application [here](https://msmanoj.github.io/ebi-task/).
-
 ### Prerequisites
 
 The following software is required to be installed on your system:
@@ -42,6 +40,11 @@ Follow the following steps to get application environment running.
 To start the applicatin:
 
     npm start
+
+## Links
+
+- View the live version of this application [here](https://msmanoj.github.io/ebi-task/).
+- View the GitHub Repository [here](https://github.com/msmanoj/ebi-task)
 
 ## Functionality overview
 
