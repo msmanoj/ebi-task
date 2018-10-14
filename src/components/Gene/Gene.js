@@ -3,7 +3,7 @@ import GeneForm from "./GeneForm";
 import Progress from "components/shared/Progress";
 import ResultList from "components/shared/ResultList";
 import { Grid } from "@material-ui/core";
-import { isGeneFormValid } from "helpers/geneHelper";
+import { isGeneFormValid } from "./Gene.helper";
 import { geneApiRequest } from "services/api";
 
 class Gene extends Component {
@@ -22,23 +22,30 @@ class Gene extends Component {
       return;
     }
 
+    // show the loading animation
     this.setState({ isLoading: true });
 
+    // send a request to the rest API to get the transcripts
     const result = geneApiRequest(geneFormData);
 
-    result.then(value => {
-      this.setState({ transcripts: value, isLoading: false });
-    });
-  };
+    result.then(transcripts => {
+      const aminoAcid = geneFormData.aminoAcid.toUpperCase();
+      const sequencePosition = geneFormData.sequencePosition;
 
-  updateGeneForm = geneFormData => {
-    this.processGene(geneFormData);
+      // Check if the actual amino acid value matches with the one user has entered
+      const proteinTranscripts = transcripts.filter(
+        transcript => transcript.seq[sequencePosition - 1] === aminoAcid
+      );
+
+      // display the transcripts to the user and hide the loading progress
+      this.setState({ transcripts: proteinTranscripts, isLoading: false });
+    });
   };
 
   render() {
     return (
       <React.Fragment>
-        <GeneForm updateGeneForm={this.updateGeneForm} />
+        <GeneForm onChange={this.processGene} />
 
         {this.state.isLoading && (
           <Progress loadingText="Loading Transcripts..." />

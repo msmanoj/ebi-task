@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HgvsForm from "./HgvsForm";
 import Progress from "components/shared/Progress";
 import ResultList from "components/shared/ResultList";
-import { serialiseHgvsNotation, isHgvsNotationValid } from "helpers/hgvsHelper";
+import { serialiseHgvsNotation, isHgvsNotationValid } from "./Hgvs.helper";
 import { Grid } from "@material-ui/core";
 import { hgvsApiRequest } from "services/api";
 
@@ -25,19 +25,22 @@ class Hgvs extends Component {
 
     this.setState({ isLoading: true });
     const result = hgvsApiRequest(serialisedHgvsNotation);
-    result.then(value => {
-      this.setState({ transcripts: value, isLoading: false });
-    });
-  };
 
-  updateHgvsNotation = newHgvsNotation => {
-    this.processHgvs(newHgvsNotation);
+    result.then(transcripts => {
+      const position = serialisedHgvsNotation.position;
+      const aminoAcid = serialisedHgvsNotation.aminoAcid;
+
+      const proteinTranscripts = transcripts.filter(
+        item => item.seq[position - 1] === aminoAcid
+      );
+      this.setState({ transcripts: proteinTranscripts, isLoading: false });
+    });
   };
 
   render() {
     return (
       <React.Fragment>
-        <HgvsForm updateHgvsNotation={this.updateHgvsNotation} />
+        <HgvsForm onUpdate={this.processHgvs} />
 
         {this.state.isLoading && <Progress loadingText="Loading HGVS..." />}
 

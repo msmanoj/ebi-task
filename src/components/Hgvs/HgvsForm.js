@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import PropTypes from "prop-types";
 
 const styles = () => ({
   textField: {
@@ -16,7 +17,7 @@ class HgvsForm extends Component {
   hgvsNotationChanged = e => {
     e.persist();
     const hgvsNotation = e.target.value;
-    this.props.updateHgvsNotation(hgvsNotation);
+    this.props.onUpdate(hgvsNotation);
   };
 
   render() {
@@ -39,5 +40,10 @@ class HgvsForm extends Component {
     );
   }
 }
+
+HgvsForm.propTypes = {
+  classes: PropTypes.object,
+  onUpdate: PropTypes.func
+};
 
 export default withStyles(styles)(HgvsForm);

@@ -37,7 +37,7 @@ Follow the following steps to get application environment running.
 
 ### Run
 
-To start the application:
+To start the applicatin:
 
     npm start
 
@@ -45,12 +45,18 @@ To start the application:
 
 This is a basic appliaiton that makes used of the Ensembl REST APIs to get a a list of Transcrips based on the vinput given by the user. Search functionalities that are currently supported are:
 
+1. Transcripts by Gene Symbol
+2. Trnascripts by HGVS Nomenclature
+
 **General functionality:**
 
-- Randomly picks up 5 cities from a list of 100 and gets the weather information from OpenWeatherMap
-- Displays the selected 5 cities along with the sunrise and sunset information
-- Once the user clicks on the city, it will get the weather forecast for the next 5 days for that city and displays the sea level at 9:00 am for all 5 days.
-- Each city that is displayed will also include one random image from Unsplash (https://unsplash.com/)
+1. Transcripts by Gene Symbol
+   A page with a form that takes in the following information: - A gene symbol e.g. BRAF - A position in a protein sequence e.g. 600 - An amino acid letter e.g. V
+
+The values entered above is processed and all transcripts from that gene with the given amino acid at the specified position is obtained from the Ensemble REST API. For each a link to the Ensembl website is displayed in a table.
+
+2. Transcripts by HGVS Nomenclature
+   A page with a form that takes in the following HGVS nomenclature used to represent variation within a protein sequence. The value entered is first validated and then processed. Once it is processed, the link to transcritps matching the given HGVS nomenclature value is displayed to the user.
 
 ## Developed With
 
@@ -67,7 +73,7 @@ This is a basic appliaiton that makes used of the Ensembl REST APIs to get a a l
 
 ### Architectural Decisions
 
-## Material Design ( vs Bootstrap vs custom CSS )
+## Material UI ( vs Bootstrap vs custom CSS )
 
 - Better choice when we need to focus more on UI/UX
 - Clear documentation and less complex

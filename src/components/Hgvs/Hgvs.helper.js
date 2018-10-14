@@ -22,6 +22,7 @@ const aminoAcidCodes = {
 };
 
 export const isHgvsNotationValid = hgvsNotation => {
+  // Build the RegEx to validate the HGVS Notation
   const stableIDRegex = "((?:[a-z][a-z]*[0-9]+[a-z0-9]*))"; // Match the Stable ID
   const versionRegex = "(\\.\\d)?"; // Match the optional version
   const colonRegex = "(:)"; // Match the literal ':'
@@ -31,21 +32,16 @@ export const isHgvsNotationValid = hgvsNotation => {
   const positionRegex = "(\\d+)"; // Match the position
 
   const hgvsValidatorRegex = new RegExp(
-    stableIDRegex +
-      versionRegex +
-      colonRegex +
-      prefixRegex +
-      literalDotRegex +
-      aminoAcidRegex +
-      positionRegex +
-      aminoAcidRegex,
+    `${stableIDRegex}${versionRegex}${colonRegex}${prefixRegex}${literalDotRegex}${aminoAcidRegex}${positionRegex}${aminoAcidRegex}`,
     ["i"] // Case insensitive
   );
 
+  // Test the input notation and return the result
   return hgvsValidatorRegex.test(hgvsNotation);
 };
 
 export const serialiseHgvsNotation = hgvsNotation => {
+  // process the inout notationa nd identity the perts
   hgvsNotation = hgvsNotation.split(":");
 
   let stableID = hgvsNotation[0].split(".")[0];

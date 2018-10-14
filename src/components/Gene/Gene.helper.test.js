@@ -1,4 +1,4 @@
-import { isGeneFormValid } from "./geneHelper";
+import { isGeneFormValid } from "./Gene.helper";
 
 describe("Testing isGeneFormValid helper function", () => {
   it("should return false if all fields are empty", () => {

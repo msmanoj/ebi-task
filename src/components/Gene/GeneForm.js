@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import PropTypes from "prop-types";
 
 const styles = () => ({
   textField: {
@@ -15,6 +16,8 @@ const styles = () => ({
 class GeneForm extends Component {
   constructor(props) {
     super(props);
+
+    // Initial state of this component
     this.state = {
       geneSymbol: "",
       sequencePosition: "",
@@ -23,12 +26,11 @@ class GeneForm extends Component {
   }
 
   updateGeneForm = () => {
-    this.props.updateGeneForm(this.state);
+    // Pass the current state values to the Gene componenst to send the API request
+    this.props.onChange(this.state);
   };
 
   geneFormChanged = e => {
-    e.persist();
-
     this.setState({ [e.target.name]: e.target.value }, () => {
       this.updateGeneForm();
     });
@@ -48,6 +50,7 @@ class GeneForm extends Component {
               className={classes.textField}
               margin="normal"
               name="geneSymbol"
+              variant="outlined"
             />
           </Grid>
           <Grid item md={4} xs={12}>
@@ -59,6 +62,7 @@ class GeneForm extends Component {
               className={classes.textField}
               margin="normal"
               name="sequencePosition"
+              variant="outlined"
             />
           </Grid>
           <Grid item md={4} xs={12}>
@@ -69,6 +73,7 @@ class GeneForm extends Component {
               className={classes.textFieldLast}
               margin="normal"
               name="aminoAcid"
+              variant="outlined"
             />
           </Grid>
         </Grid>
@@ -76,5 +81,10 @@ class GeneForm extends Component {
     );
   }
 }
+
+GeneForm.propTypes = {
+  classes: PropTypes.object,
+  onChange: PropTypes.func
+};
 
 export default withStyles(styles)(GeneForm);

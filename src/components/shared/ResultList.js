@@ -5,6 +5,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { Grid } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 const ResultList = ({ transcripts }) => (
   <React.Fragment>
@@ -47,5 +48,9 @@ const ResultList = ({ transcripts }) => (
     </Grid>
   </React.Fragment>
 );
+
+ResultList.propTypes = {
+  transcripts: PropTypes.array
+};
 
 export default ResultList;

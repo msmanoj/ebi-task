@@ -1,4 +1,4 @@
-import { isHgvsNotationValid } from "./hgvsHelper";
+import { isHgvsNotationValid } from "./Hgvs.helper";
 
 describe("Testing isHgvsNotationValid helper function ", () => {
   it("should return false if empty value is passed", () => {

@@ -1,18 +1,9 @@
 import React, { Component } from "react";
-
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-
 import FormTab from "./FormTab";
 import HeroContent from "./HeroContent";
-
-// import {
-//   getTranscripts,
-//   hgvsProcessor,
-//   formUpdated,
-//   selectTask
-// } from "actions/Transcripts/transcriptsActions";
 import Gene from "../Gene/Gene";
 import Hgvs from "../Hgvs/Hgvs";
 
