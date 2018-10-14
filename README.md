@@ -4,6 +4,8 @@
 
 These instructions will get you a copy of the project up and running on your local machine.
 
+You can view the live version of this application [here](https://msmanoj.github.io/).
+
 ### Prerequisites
 
 The following software is required to be installed on your system:
@@ -63,40 +65,57 @@ The values entered above is processed and all transcripts from that gene with th
 - [Node.js](https://nodejs.org/en/) - Javascript runtime
 - [create-react-app](https://github.com/facebook/create-react-app) - A tool allows you to quickly create & run React applications with no configuration.
 - [React](https://reactjs.org/) - A javascript library for building user interfaces
-- [Redux](https://redux.js.org/) - A predictable state container for JavaScript apps.
 - [Babel](https://babeljs.io/) - A transpiler for javascript
 - [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
-- [Immutable](https://facebook.github.io/immutable-js/) - Immutable collections for JavaScript
-- [Materialize](https://materializecss.com/) - A modern responsive _CSS_ framework based on Material Design by Google.
-- [Moment](https://momentjs.com/) - A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
-- [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2) - A React wrapper for Chart.js 2
+- [MATERIAL-UI](https://material-ui.com/) - React components that implement Google's Material Design.
+- [Awesome Debounce Promise](https://github.com/slorber/awesome-debounce-promise/) - Debounce your async calls with React in mind.
 
 ### Architectural Decisions
 
-## Material UI ( vs Bootstrap vs custom CSS )
-
-- Better choice when we need to focus more on UI/UX
-- Clear documentation and less complex
-- Faster development process
-
-## ImmutableJS (vs ES6)
-
-- Easier to develop and maintain
-- We don't end up accidentally mutating the data
-
-## React Directory structure - Directory per view (vs Atomic structure)
+## React Directory structure - Directory per view
 
 - Code isolation
 - Clear view of the structure of the application
 - Better choice for a small application
 
-## Thunk (vs Saga)
+## Material UI
 
-- Easy to use and clear to understand the code
-- Better choice for a simple application
+- Faster development process by avoiding DRY
+- Better choice when we do not have a spcific design standard
+- Clear documentation and less complex
 
-## Redux (vs MboX)
+## Axios - To make external API calls
 
-- Predictable state updates make it easier to understand how the data flow works in the application
-- Centralizing the state makes it easier to implement things like logging changes to the data, or persisting data between page refreshes
-- Redux library is pretty small. Most of the time you are dealing only with plain JavaScript objects and arrays. It is closer to vanilla JavaScript than MobX.
+- Easy to abort a previously made request. Works pretty well when used along with 'Awesome Debounce Promise'
+- Performs automatic JSON data transformation
+
+## Single Responsibility Component
+
+- Improves expandability
+- Code isolation and reduced dependency
+- Easier to understand a purpose of a component
+
+## Encapsulation - Lose Coupling
+
+- Components should hide the internal structure as much as possible and have less knowledge about other components.
+- This makes the components less coupled and easier to test
+
+## Pure Functions
+
+- Methods should be pure or almost pure whereever possible
+- This will make the result of the methods to be more stable and predictable
+
+## Defining PropTypes
+
+- It is a good practice to define all the prop types in all the components as it will reduce the number of errors in the development phase
+
+### Testing
+
+## Unit Tests and Coverage
+
+- It is better to automate the testing procees during the development stage as manual testing will get more complex as the scope of the application grows.
+- Almost all the components and methods needs to be included in the tests regardless of thir size and complexity.
+
+## Production Testing
+
+- Regression testing will be required after deploying on to the production environment.
