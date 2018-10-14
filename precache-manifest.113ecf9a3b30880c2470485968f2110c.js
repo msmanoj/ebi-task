@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/ebi-task/static/js/runtime~main.4d4792f1.js"
   },
   {
-    "revision": "ae7d44e2b2ca610fb62f",
-    "url": "/ebi-task/static/js/main.ae7d44e2.chunk.js"
+    "revision": "d1fb1af6125c3de2a2f4",
+    "url": "/ebi-task/static/js/main.d1fb1af6.chunk.js"
   },
   {
     "revision": "3d1a4dfc957421f96a99",
     "url": "/ebi-task/static/js/1.3d1a4dfc.chunk.js"
   },
   {
-    "revision": "ae7d44e2b2ca610fb62f",
+    "revision": "d1fb1af6125c3de2a2f4",
     "url": "/ebi-task/static/css/main.1d86d077.chunk.css"
   },
   {
-    "revision": "03ef1b7d16af9f4c2a2bbe01e332a927",
+    "revision": "5b504116b2caea73d952c61dd8c63d2f",
     "url": "/ebi-task/index.html"
   }
 ];
