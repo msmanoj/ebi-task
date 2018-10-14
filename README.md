@@ -22,6 +22,7 @@ Type the following commands in the terminal to verify your node and npm versions
 Follow the following steps to get application environment running.
 
 - Clone 'ebi-task' repository from GitHub
+
   HTTP:
 
       git clone https://github.com/msmanoj/ebi-task.git
